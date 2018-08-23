@@ -14,11 +14,11 @@ def Main():
             data = conn.recv(1024).decode()
             if not data:
                     break
-            print ("from connected  user: " + str(data))
+            print (str(data))
              
-            data = str(data).upper()
-            print ("sending: " + str(data))
-            conn.send(data.encode())
+#            data = str(data).upper()
+#            print ("sending: " + str(data))
+#            conn.send(data.encode())
              
     conn.close()
      

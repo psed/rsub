@@ -18,8 +18,6 @@ while True:
 	            print("Button {:>2} value: {}".format(i,button))
             
 	        hats = joystick.get_numhats()
-	        print("Number of hats: {}".format(hats))
-
 	        for i in range( hats ):
-	            hat = joystick.get_hat( i )
+	            hat = joystick.get_hat(i)
         	    print("Hat {} value: {}".format(i, str(hat)))
