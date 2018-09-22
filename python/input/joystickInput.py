@@ -7,17 +7,17 @@ joystick.init()
 
 while True:
     for event in pygame.event.get():
-	        axes = joystick.get_numaxes()
-	        for i in range(axes):
-	            axis = joystick.get_axis(i)
-        	    print("Axis {} value: {:>6.3f}".format(i, axis))
-            
-	        buttons = joystick.get_numbuttons()
-	        for i in range(buttons):
-        	    button = joystick.get_button(i)
-	            print("Button {:>2} value: {}".format(i,button))
-            
-	        hats = joystick.get_numhats()
-	        for i in range( hats ):
-	            hat = joystick.get_hat(i)
-        	    print("Hat {} value: {}".format(i, str(hat)))
+
+            command = ''
+            axes = joystick.get_numaxes()
+            for i in range(axes):
+                command += str(joystick.get_axis(i)) + ','
+
+            buttons = joystick.get_numbuttons()
+            for i in range(buttons):
+                command += str(joystick.get_button(i)) + ','
+
+            hats = joystick.get_numhats()
+            for i in range( hats ):
+                command += str(joystick.get_hat(i)) + ','
+            print(command)

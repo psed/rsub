@@ -7,9 +7,9 @@ joystick = pygame.joystick.Joystick(0)
 joystick.init()
  
 def Main():
-	host = '127.0.0.1'
+	host = '192.168.88.250'
 	port = 5000
- 
+
 	mySocket = socket.socket()
 	mySocket.connect((host,port))
 
@@ -31,11 +31,12 @@ def Main():
 				hat = joystick.get_hat(i)
 				message += str(hat)
 
+			message += '\n'
 			mySocket.send(message.encode())
 #			data = mySocket.recv(1024).decode()
 #			print ('Received from server: ' + data)
-                 
+
 	mySocket.close()
- 
+
 if __name__ == '__main__':
     Main()
